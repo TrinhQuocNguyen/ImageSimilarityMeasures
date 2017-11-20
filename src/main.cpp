@@ -110,12 +110,12 @@ int main (int argc, const char *argv[])
 	VIFP *vifp = new VIFP(height, width);
 	PSNRHVS *phvs = new PSNRHVS(height, width);
 
-	cv::Mat originalImage = cv::imread("./data/raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
-	cv::Mat noiseImage = cv::imread("./data/noise_raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
+	cv::Mat originalImage = cv::imread("./../data/raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
+	cv::Mat noiseImage = cv::imread("./../data/noise_raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
 	cv::resize(noiseImage, noiseImage, cv::Size(width, height));
 
-	cv::Mat m_image = cv::imread("./data/m_raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
-	cv::Mat g_image = cv::imread("./data/g_raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
+	cv::Mat m_image = cv::imread("./../data/m_raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
+	cv::Mat g_image = cv::imread("./../data/g_raindrop0113.jpg", CV_LOAD_IMAGE_COLOR);
 
 
 
