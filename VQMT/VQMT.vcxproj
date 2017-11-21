@@ -176,7 +176,9 @@
     <ClCompile Include="..\src\SSIM.cpp" />
     <ClCompile Include="..\src\VideoYUV.cpp" />
     <ClCompile Include="..\src\VIFP.cpp" />
-    <ClCompile Include="qm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

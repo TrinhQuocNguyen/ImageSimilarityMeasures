@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MSSSIM" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAEAAAAAAAAAAgIAABAAAIAAAQABAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\MSSSIM.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Metric" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAQAQAAAAAAAAAAAAAACAAAAAABAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\Metric.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Processor" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\Processor.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PSNR" Collapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAABAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\PSNR.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PSNRHVS" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAkQAAAAAAEAAIAgAAAQAAAQAAAAAAAAABAEAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\PSNRHVS.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoYUV" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAgACAQASIEAAAAAAAAAGEAABAAQAQAAEAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\VideoYUV.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VIFP" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAgAAAAAAIAAAAAAAAAAAAJAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\VIFP.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSIM" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAgAAAIAAAAAAAEAAAAAAAABAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\SSIM.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ChromaSubsampling" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAICAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\inc\VideoYUV.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Metrics" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAACAAAAgAAAABAAAAAAAAABAAAAABAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\src\main.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Params" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQAAgAABAAQAAAAAgAIAAkAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\[PROJECTS]\ImageSimilarityMeasures\src\main.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
