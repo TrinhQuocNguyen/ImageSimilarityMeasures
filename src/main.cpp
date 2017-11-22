@@ -81,8 +81,9 @@ int main (int argc, const char *argv[])
 
 	Processor *processor = new Processor(0,0);
 	list<string> processedFolderPaths;
-	processedFolderPaths.push_back("./../data/m_images");
-	processedFolderPaths.push_back("./../data/g_images");
+	//processedFolderPaths.push_back("./../data/m_images");
+	//processedFolderPaths.push_back("./../data/g_images");
+	processedFolderPaths.push_back("./../data/original_images");
 
 	processor->processFolders(640, 640, "./../data/original_images", processedFolderPaths, "./../results/");
 	return 0;
