@@ -4,8 +4,10 @@
 
 Processor::Processor(int h, int w){
 
-
 }
+/**
+Create a folder if it was not existed
+*/
 void Processor::CreateFolder(const char * path)
 {
 	if (!CreateDirectoryA(path, NULL))
@@ -13,7 +15,9 @@ void Processor::CreateFolder(const char * path)
 		return;
 	}
 }
-
+/**
+Create the file if it was not existed (In this case, make result-report files)
+*/
 std::ofstream Processor::createFileIfNotExist(string fileResultPath) {
 
 	CreateFolder("./../results");
@@ -27,6 +31,10 @@ std::ofstream Processor::createFileIfNotExist(string fileResultPath) {
 		return fp;
 	}
 }
+
+/**
+Get the string of current time in format: yyMMdd_HHmmss
+*/
 string getOutputFileName() {
 	auto t = std::time(nullptr);
 	auto tm = *std::localtime(&t);
@@ -37,7 +45,10 @@ string getOutputFileName() {
 
 	return str;
 }
-string SplitFilename( string str)
+/**
+Get the last string of the path
+*/
+string splitFilename( string str)
 {
 	string result[2];
 	size_t found;
@@ -46,14 +57,19 @@ string SplitFilename( string str)
 	result[1] = str.substr(found + 1); // file
 	return str.substr(found + 1);
 }
+/**
+The function compares the similarity of pairs of images in originalFolder to the other folders
+*/
 void Processor::processFolders(int width, int height, string originalFolderPath , list<string> processedFolderPaths, string resultFolderPath) {
+	// compare images in origianl folder to every folders in the list of processedFolderPaths
 	for (list<string>::iterator it = processedFolderPaths.begin(); it != processedFolderPaths.end(); it++) {
-		processImages(width, height, originalFolderPath, *it, resultFolderPath +"/"+ SplitFilename(originalFolderPath) + "_" + SplitFilename(*it)+ ".txt", false );
+		processImages(width, height, originalFolderPath, *it, resultFolderPath +"/"+ splitFilename(originalFolderPath) + "_" + splitFilename(*it)+ ".txt", false );
 	}
 }
-/** @processImages
 
-The function 
+/** @processImages 
+
+The function compares the similarity of pairs of images in 2 folders
 @param width 
 @param height 
 @param folderPath1 
@@ -63,8 +79,10 @@ The function
 */
 void Processor::processImages(int width, int height, string folderPath1, string folderPath2, string fileResultPath, bool previewOn) {
 
+	// create file to write
 	std:ofstream fp = createFileIfNotExist(fileResultPath+"."+ getOutputFileName());
 
+	// Init methods
 	SSIM *ssim = new SSIM(height, width);
 	MSSSIM *msssim = new MSSSIM(height, width);
 	PSNR *psnr = new PSNR(height, width);
@@ -73,10 +91,12 @@ void Processor::processImages(int width, int height, string folderPath1, string 
 	float ssimMes = 0, msssimMes = 0, psnrMes = 0, vifpMes = 0;
 	float ssimSum = 0, msssimSum = 0, psnrSum = 0, vifpSum = 0;
 
-	vector<cv::String> originFiles;
-	cv::glob(folderPath1, originFiles);
+	// get all the image in folderPath1 (normally it should be the original folder)
+	vector<cv::String> originalFiles;
+	cv::glob(folderPath1, originalFiles);
 	int count = 0;
-	for (auto & file : originFiles)
+
+	for (auto & file : originalFiles)
 	{
 		//std::cout << "Loading drop file " << file << std::endl;
 		cv::Mat originalImage = cv::imread(file);
@@ -91,6 +111,7 @@ void Processor::processImages(int width, int height, string folderPath1, string 
 			cout << "Can not load the corresponding image" << endl;
 		}
 
+		// resize to nomalize the images
 		cv::resize(originalImage, originalImage, cv::Size(width, height));
 		cv::resize(noiseImage, noiseImage, cv::Size(width, height));
 
@@ -117,7 +138,7 @@ void Processor::processImages(int width, int height, string folderPath1, string 
 		cout << "MSSSIM : " << msssimMes << endl;
 		cout << "VIFP   : " << vifpMes << endl;
 
-		// write to files
+		// write to file
 		fp << "----------------------" << endl;
 		fp << "Similarity average of images in 2 folders: " << folderPath1 << " and " << folderPath2 << endl;
 		fp << "Similarity of 2 images: " << iFileName << endl;
@@ -147,7 +168,7 @@ void Processor::processImages(int width, int height, string folderPath1, string 
 	cout << "###############################" << endl;
 	cout << "Done!\n";
 
-	// write to files
+	// write to file
 	fp << "###############################" << endl;
 	fp << "Similarity average of images in 2 folders: " << folderPath1 << " and " << folderPath2 << endl;
 	fp << "PSNR   : " << psnrSum / count << endl;
@@ -157,6 +178,5 @@ void Processor::processImages(int width, int height, string folderPath1, string 
 	fp << "###############################" << endl;
 	fp << "Done!\n";
 	fp.close();
-
 }
 
